@@ -5,7 +5,7 @@
 
 Fonte: [R Curitiba 2013](http://rcuritiba.com.br/)  
 
-### Pensando nos objetivos do evento, durante o desenvolvimento do site para a CORDe Relicário, pensei que seria interessante abrir o projeto para o público. Assim os encontristas poderem colaborar com o desenvolvimento dele e futuras CORDes e CONDes terão acesso a um ponto de partida, ou ao menos um estudo. ###
+Pensando nos objetivos do evento, durante o desenvolvimento do site para a CORDe Relicário, pensei que seria interessante abrir o projeto para o público. Assim os encontristas poderem colaborar com o desenvolvimento dele e futuras CORDes e CONDes terão acesso a um ponto de partida, ou ao menos um estudo.  
 
 ## Objetivos ##
 * Desenvolvimento do tema de forma responsiva.

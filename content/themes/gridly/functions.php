@@ -45,7 +45,7 @@
     
 	// Gridly post thumbnails
 	add_theme_support( 'post-thumbnails' );
-		add_image_size('summary-image', 310, 9999);
+		add_image_size('summary-image', 380, 9999);
 		add_image_size('detail-image', 770, 9999);
 	
 	

@@ -8,7 +8,7 @@
 		function core_mods() {
 			if ( !is_admin() ) {
 				wp_deregister_script('jquery');
-				wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"));
+				wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"));
 				wp_register_script('jquery.masonry', (get_template_directory_uri()."/js/jquery.masonry.min.js"),'jquery',false,true);
 				wp_register_script('gridly.functions', (get_template_directory_uri()."/js/functions.js"),'jquery.masonry',false,true);
 				
@@ -19,6 +19,15 @@
 		}
 		core_mods();
 	}
+
+	// Register stylesheets
+
+	function theme_styles()  
+	{ 
+	    wp_register_style( 'relicario', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
+	    wp_enqueue_style( 'relicario');
+	}
+	add_action('wp_enqueue_scripts', 'theme_styles');
 	
 	// content width
 	if ( !isset( $content_width ))  {

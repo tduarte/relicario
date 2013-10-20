@@ -1,0 +1,36 @@
+# WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# ENABLE SVG/SVGZ
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# ENABLE EXPIRATIONS
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year”
+ExpiresByType text/css "access 1 month”
+ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
+
+# ENABLE GZIP
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</IfModule>
+
+# REMOVE ETAGS
+Header unset Pragma
+FileETag None
+Header unset ETag

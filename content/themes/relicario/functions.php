@@ -82,9 +82,4 @@
 	}
 	add_filter('excerpt_more', 'new_excerpt_more');
 
-
-
-	// Gridly theme options 
-	include 'options/admin-menu.php';
-
 ?>

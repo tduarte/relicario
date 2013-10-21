@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div id="post-<?php the_ID(); ?> single-post" <?php post_class(); ?>>
 			<?php if ( has_post_thumbnail() ) { ?>			
 			<div class="gridly-image"><?php the_post_thumbnail( 'detail-image' );  ?></div>
 				<div class="gridly-category"><p><?php the_category(', ') ?></p></div>

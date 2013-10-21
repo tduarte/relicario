@@ -13,16 +13,17 @@
 @import 'functions';
 @import 'variables';
 @import 'reset';
+@import 'animate';
 
 body {
 	color: $font-color;
-	background: url(images/bg.png) repeat #FFF;
+	background: url(images/bg.jpg) repeat;
 	line-height: $line-height;
 	font: $base-font-size $font-body;
 }
 #wrap {
 	width:94%;
-	max-width: 1218px;
+	max-width: 1200px;
 	margin: auto;
 }
 
@@ -93,15 +94,15 @@ a:focus {
 	outline-style: none;
 }  	
 	
-#header {
+header {
 	width: 100%;
+	overflow: hidden;
+	margin-bottom: 50px;
 }
 
 #logo {
-	max-width: 500px;
 	max-height: 87px;
-	margin-top: 35px;
-	margin-bottom: 15px;
+	margin: 30px 0;
 	a {
 		display: block;
 	}
@@ -110,18 +111,15 @@ a:focus {
 	}
 }
 
-#nav {
-	width: 100%;
-	background: url(images/bg-row.png) top left repeat-x;
-	height: 57px;
+nav {
+	border-bottom: none;
 	overflow: hidden;
+	background: rgba(255,255,255,.2);
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 5px 5px 0 0;
 	ul {
-		display: inline;
-		list-style: none;
 		margin: 0px;
 		padding: 0px;
-		height: 42px;
-		line-height: 42px;
 		clear: both;
 		li {
 			float: left;
@@ -131,15 +129,57 @@ a:focus {
 			padding: 0px;
 			a {
 				display: block;
-				height: 42px;
-				margin-right: 20px;
-				text-decoration: none;
-				margin-top: 10px;
+				padding: 17px;
+			}
+			ul {
+				min-width: 180px;
+				margin: 0 0 0 -1px;
+				display: none;
+				position: absolute;
+				z-index: 99999;
+				background-color: white;
+				border: 1px solid rgba(0,0,0,0.2);
+				border-radius: 0 0 5px 5px;
+				border-top: none;
+				@extend .animated;
+				@extend .fadeInDown;
+				li {
+					font-size: 1em;
+					position: relative;
+					float: none;
+				}
+			}
+			&:hover > ul {
+			display: block;
+			}
+		}
+	}
+}
+#social {
+	float: right;
+	overflow: hidden;
+	margin-top: -150px;
+	width: 210px;
+	ul {
+		position: absolute;
+		li {
+			float: left;
+			display: inline;
+			opacity: .5;
+			&:hover {
+			opacity: .7;
 			}
 		}
 	}
 }
 		
+
+footer {
+	background-color: rgba(255,255,255,.3);
+	overflow: hidden;
+	margin-top: 100px;
+}
+
 #footer-area {
 	width: 100%;
 	display: inline;
@@ -211,9 +251,6 @@ a:focus {
 
 .type-post {
 	width: 770px;
-	background: #FFF;
-	border-right: 1px solid #dbdbdb;
-	border-bottom: 1px solid #dbdbdb;
 	margin-right: 10px;
 	margin-top: 15px;
 	display: inline;
@@ -239,7 +276,7 @@ a:focus {
 .gridly-category {
 	position: absolute;
 	width: auto;
-	background: #000;
+	background: rgba(255,255,255,.7);
 	margin-top: -35px;
 	z-index: 10;
 	height: 30px;
@@ -251,11 +288,11 @@ a:focus {
 		line-height: 30px;
 		padding-left: 20px;
 		padding-right: 40px;
-		color: #fff;
+		color: #666;
 		font-style: italic;
 	}
 	a {
-		color: #fff;
+		color: black;
 		font-style: italic;
 		&:hover {
 			color: #555;
@@ -284,11 +321,10 @@ a:focus {
 }
 
 #post-area .post {
-	width: 380px;
+	width: 390px;
 	background: #FFF;
 	border-right: 1px solid #dbdbdb;
 	border-bottom: 1px solid #dbdbdb;
-	margin-right: 10px;
 	margin-top: 15px;
 	position: relative;
 	.gridly-copy {
@@ -429,9 +465,8 @@ blockquote {
 		overflow: hidden;
 	}
 
-	#nav {
+	nav {
 		width: 310px;
-		background: none;
 		height: auto;
 		overflow: hidden;
 		ul {
@@ -449,8 +484,7 @@ blockquote {
 				padding: 0px;
 				a {
 					display: block;
-					height: 42px;
-					padding: 0;
+					padding: 0 15px;
 					margin: 0px;
 					width: 320px;
 					border-bottom: 1px solid #ccc;

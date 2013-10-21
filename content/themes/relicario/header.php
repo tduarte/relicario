@@ -21,23 +21,29 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
-<div id="wrap">
-	<div id="header">
-				
+	<header>
+		<div id="wrap">
 			<div id="logo">
-					<a href="<?php echo home_url( '/' ); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<object data="<?php echo get_template_directory_uri(); ?>/images/logo.svg" type="image/svg+xml">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('sitename'); ?>" />
-						</object>
-					</a>			
+				<a href="<?php echo home_url( '/' ); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<object data="<?php echo get_template_directory_uri(); ?>/images/logo.svg" type="image/svg+xml">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('sitename'); ?>" />
+					</object>
+				</a>			
 			</div>
-								
-			 <?php if ( has_nav_menu( 'main_nav' ) ) { ?>
-			 <div id="nav"><?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?></div>
-			 <?php } else { ?>
-		 <div id="nav"><ul><?php wp_list_pages("depth=1&title_li=");  ?></ul></div>
-		 <?php } ?>
+			<nav>
+				<?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
+			</nav>
 
-	 </div>
-<!-- // header -->           
+			<div id="social">
+				<ul>
+					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt=""></a></li>
+					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt=""></a></li>
+					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/flickr.png" alt=""></a></li>
+					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt=""></a></li>
+					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt=""></a></li>
+					<!-- <li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/github.png" alt=""></a></li> -->
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div id="wrap">

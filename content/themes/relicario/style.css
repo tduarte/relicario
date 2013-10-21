@@ -536,7 +536,7 @@ body {
 
 #wrap {
   width: 94%;
-  max-width: 1200px;
+  max-width: 1218px;
   margin: auto; }
 
 h1 {
@@ -783,10 +783,8 @@ footer {
   height: inherit; }
 
 #post-area .post {
-  width: 390px;
-  background: #FFF;
-  border-right: 1px solid #dbdbdb;
-  border-bottom: 1px solid #dbdbdb;
+  width: 380px;
+  margin-right: 10px;
   margin-top: 15px;
   position: relative; }
   #post-area .post .gridly-copy {

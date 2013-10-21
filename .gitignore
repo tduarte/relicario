@@ -1,3 +1,4 @@
 wp-config.php
 content/uploads
 content/plugins/admin-bar
+content/plugins/regenerate-thumbnails

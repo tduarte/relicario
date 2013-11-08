@@ -1,20 +1,15 @@
-
-// masonry code 
-$(document).ready(function() {
-	$('#post-area').masonry({
-		// options
-		itemSelector : '.post',
-		// options...
-	isAnimated: true,
-	animationOptions: {
-		duration: 400,
-		easing: 'linear',
-		queue: false
-	}
-	
-	});
+// Masonry
+$('#container').masonry({
+  columnWidth: '.type-post',
+  itemSelector: '.type-post',
+  isAnimated: true
 });
 
+// Menu
+
+$(function() {
+	$( '#menu-container' ).dlmenu();
+});
 
 // hover code for index  templates
 $(document).ready(function() {

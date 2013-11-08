@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : ?>
 
-	<div id="post-area">
+	<div id="container" class="js-masonry">
 	<?php while (have_posts()) : the_post(); ?>	
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

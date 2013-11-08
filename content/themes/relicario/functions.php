@@ -9,12 +9,16 @@
 			if ( !is_admin() ) {
 				wp_deregister_script('jquery');
 				wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"));
-				wp_register_script('jquery.masonry', (get_template_directory_uri()."/js/jquery.masonry.min.js"),'jquery',false,true);
-				wp_register_script('gridly.functions', (get_template_directory_uri()."/js/functions.js"),'jquery.masonry',false,true);
+				wp_register_script('modernizr', (get_template_directory_uri()."/js/modernizr-latest.js"),'modernizr');
+				wp_register_script('masonry', (get_template_directory_uri()."/js/masonry.min.js"),'mansonry',false,true);
+				wp_register_script('dlmenu', (get_template_directory_uri()."/js/jquery.dlmenu.js"),'dlmenu',false,true);
+				wp_register_script('relicario', (get_template_directory_uri()."/js/functions.js"),'relicario',false,true);
 				
 				wp_enqueue_script('jquery');
-				wp_enqueue_script('jquery.masonry');
-				wp_enqueue_script('gridly.functions');
+				wp_enqueue_script('modernizr');	
+				wp_enqueue_script('masonry');
+				wp_enqueue_script('dlmenu');
+				wp_enqueue_script('relicario');
 			}
 		}
 		core_mods();
@@ -45,7 +49,7 @@
     
 	// Gridly post thumbnails
 	add_theme_support( 'post-thumbnails' );
-		add_image_size('summary-image', 380, 9999);
+		add_image_size('summary-image', 450, 9999);
 		add_image_size('detail-image', 770, 9999);
 	
 	

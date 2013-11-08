@@ -7,7 +7,7 @@ $base-font-size: 16px;
 $line-height: 30px;
 
 // Colors
-$link-color: #00ff00;
+$link-color: rgb(162,221,0);
 $font-color: #454545;
 
 
@@ -39,4 +39,6 @@ $font-color: #454545;
 }
 
 // Media Queries
-$small-size: "handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)";
+$small-size: "only screen and (max-width: 480px)";
+$large-size: "only screen and (min-width : 1224px)";
+$default-size: "only screen and (max-width : 768px)";

@@ -30,20 +30,43 @@
 					</object>
 				</a>			
 			</div>
-			<nav>
-				<?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
+			<nav id="menu-container" class="menu-wrapper">
+			<button class="dl-trigger">Open Menu</button>
+			<?php
+
+			$defaults = array(
+				'theme_location'  => 'main_nav',
+				'menu'            => '',
+				'container'       => '',
+				'container_class' => '',
+				'container_id'    => '',
+				'menu_class'      => 'menu',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => ''
+			);
+
+			wp_nav_menu( $defaults );
+
+			?>
 			</nav>
 
-			<div id="social">
+			<!-- <div id="social">
 				<ul>
 					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt=""></a></li>
 					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt=""></a></li>
 					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/flickr.png" alt=""></a></li>
 					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt=""></a></li>
 					<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt=""></a></li>
-					<!-- <li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/github.png" alt=""></a></li> -->
 				</ul>
-			</div>
+			</div> -->
 		</div>
 	</header>
 	<div id="wrap">

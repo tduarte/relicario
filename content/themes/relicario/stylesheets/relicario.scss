@@ -13,19 +13,36 @@
 @import 'functions';
 @import 'variables';
 @import 'reset';
-@import 'animate';
+@import 'menu';
 
 body {
 	color: $font-color;
-	background: url(images/bg.jpg) repeat;
+	background: #eee;
 	line-height: $line-height;
 	font: $base-font-size $font-body;
 }
+
 #wrap {
-	width:94%;
-	max-width: 1218px;
-	margin: auto;
+	max-width: 90%; /* 960 px */
+	margin: 0 auto;
 }
+#container {
+	width: 103.125%; /* 990px */
+	overflow: hidden;
+	margin-bottom: -1.875em; /* 30px */
+}
+
+.type-post {
+	width: 31.6%; /* 300px */
+	float: left;
+	margin: 0 0.1% -0.2em; /* 15px 30px */
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 
 h1 {
 	font-size: em(36px);
@@ -45,20 +62,6 @@ p {
 	margin-bottom:8px;
 }
 
-ul {
-	padding: 0px;
-	margin: 0;
-	margin-left: 0px;
-	margin-top: 10px;
-	li {
-		color: #858585;
-		padding-left: 10px;
-		margin-bottom: 7px;
-		list-style: inside;
-		list-style-type: square;
-	}
-}
-
 ol {
 	padding: 0px;
 	margin: 0;
@@ -67,7 +70,6 @@ ol {
 	li {
 		color: #858585;
 		padding-left: 10px;
-		margin-bottom: 7px;
 		list-style-type: decimal;
 	}
 }
@@ -96,64 +98,42 @@ a:focus {
 	
 header {
 	width: 100%;
-	overflow: hidden;
-	margin-bottom: 50px;
+	background: white;
+	margin-bottom: 20px;
+	z-index: 1;
+}
+
+header:before,
+header:after {
+    content:"";
+    display:table;
+}
+header:after {
+    clear:both;
 }
 
 #logo {
+	max-width: 100%;
+	display: inline-block;
+	position: relative;
+	float: left;
 	max-height: 87px;
-	margin: 30px 0;
+	margin: 20px 0;
 	a {
 		display: block;
 	}
 	object {
 		pointer-events: none;
+		position: relative;
+		max-width: 100%;
 	}
 }
 
 nav {
 	border-bottom: none;
-	overflow: hidden;
-	background: rgba(255,255,255,.2);
-	border: 1px solid rgba(0,0,0,0.2);
+	z-index: 2;
+	float:right;
 	border-radius: 5px 5px 0 0;
-	ul {
-		margin: 0px;
-		padding: 0px;
-		clear: both;
-		li {
-			float: left;
-			display: inline;
-			font-size: 0.8em;
-			margin: 0px;
-			padding: 0px;
-			a {
-				display: block;
-				padding: 17px;
-			}
-			ul {
-				min-width: 180px;
-				margin: 0 0 0 -1px;
-				display: none;
-				position: absolute;
-				z-index: 99999;
-				background-color: white;
-				border: 1px solid rgba(0,0,0,0.2);
-				border-radius: 0 0 5px 5px;
-				border-top: none;
-				@extend .animated;
-				@extend .fadeInDown;
-				li {
-					font-size: 1em;
-					position: relative;
-					float: none;
-				}
-			}
-			&:hover > ul {
-			display: block;
-			}
-		}
-	}
 }
 #social {
 	float: right;
@@ -175,7 +155,8 @@ nav {
 		
 
 footer {
-	background-color: rgba(255,255,255,.3);
+	border-top: 1px solid rgba(0,0,0,.1);
+	background: rgb(168,229,0);
 	overflow: hidden;
 	margin-top: 100px;
 }
@@ -187,7 +168,6 @@ footer {
 	padding-top: 10px;
 	margin-top: 20px;
 	clear: both;
-	background: url(images/bg-row.png) top left repeat-x;
 	.widget {
 		width: 310px;
 		margin-right: 10px;
@@ -229,13 +209,12 @@ footer {
 #copyright {
 	clear: both;
 	width: 100%;
-	background: url(images/bg-row.png) top left repeat-x;
+	background: $link-color;
 	display: inline;
 	float: left;
 	margin-top: 20px;
-	margin-bottom: 20px;
 	p {
-		padding-top: 15px;
+		line-height: 70px;
 		color: #4f5356;
 		font-size: 12px;
 	}
@@ -250,7 +229,6 @@ footer {
 }
 
 .type-post {
-	width: 770px;
 	margin-right: 10px;
 	margin-top: 15px;
 	display: inline;
@@ -274,18 +252,19 @@ footer {
 }
 
 .gridly-category {
+	display: none;
 	position: absolute;
-	width: auto;
+	width: 100%;
 	background: rgba(255,255,255,.7);
-	margin-top: -35px;
+	margin-top: -43px;
 	z-index: 10;
-	height: 30px;
+	height: 40px;
 	overflow: hidden;
 	left: 0;
 	p {
 		margin: 0;
 		padding: 0;
-		line-height: 30px;
+		line-height: 40px;
 		padding-left: 20px;
 		padding-right: 40px;
 		color: #666;
@@ -300,53 +279,9 @@ footer {
 	}
 }
 
-.gridly-copy {
-	width: 710px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	overflow: hidden;
-}
-
-.gridly-date {
-	width: 150px;
-	color: #8e8e8e;
-	font-size: 11px;
-}
-
 .size-full {
 	width: 100%;
 	height: inherit;
-}
-
-#post-area .post {
-	width: 380px;
-	margin-right: 10px;
-	margin-top: 15px;
-	position: relative;
-	.gridly-copy {
-		width: 250px;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 10px;
-		padding-bottom: 20px;
-		overflow: hidden;
-		clear: both;
-	}
-	.gridly-date {
-		width: 150px;
-		color: #8e8e8e;
-		font-size: 11px;
-		border-bottom: 1px dotted #cccccc;
-		padding-bottom: 0;
-		padding-top: 0;
-	}
-	.gridly-link {
-		width: 150px;
-		border-top: 1px dotted #e8e8e8;
-		color: #494e51;
-	}
 }
 
 .comments-area {
@@ -454,6 +389,21 @@ blockquote {
 =            Media Queries            =
 =====================================*/
 
+@media #{$large-size} {
+	.type-post {
+		width: 23.3%;
+		float: left;
+		margin: 0 0.5% -0.2em;
+	}
+}
+@media #{$default-size} {
+	.type-post {
+	width: 47.3%;
+	float: left;
+	margin: 0 0.7% 0.5em;
+	}
+}
+
 @media #{$small-size} {
 
 	#wrap {
@@ -463,44 +413,9 @@ blockquote {
 		overflow: hidden;
 	}
 
-	nav {
-		width: 310px;
-		height: auto;
-		overflow: hidden;
-		ul {
-			display: inline;
-			list-style: none;
-			margin: 0px;
-			padding: 0px;
-			height: 42px;
-			line-height: 42px;
-			li {
-				float: left;
-				display: inline;
-				font-size: 12px;
-				margin: 0px;
-				padding: 0px;
-				a {
-					display: block;
-					padding: 0 15px;
-					margin: 0px;
-					width: 320px;
-					border-bottom: 1px solid #ccc;
-					&:hover! {}
-				}
-			}
-		}
-	}
-
-	.single-post .type-post, .type-page {
-		width: 310px;
-		.gridly-copy {
-			width: 290px;
-		}
-		img {
-			width: 290px;
-			height: inherit;
-		}
+	.type-post {
+		width: 100%;
+		margin: 0 0 1em;
 	}
 
 	#comment-form {

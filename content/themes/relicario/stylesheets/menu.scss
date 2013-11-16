@@ -29,7 +29,6 @@
 }
 
 .menu-wrapper button {
-	background: #ccc;
 	float: right;
 	border: none;
 	width: 30px;
@@ -39,16 +38,17 @@
 	position: relative;
 	cursor: pointer;
 	outline: none;
+	border-radius: 3px;
 }
 
 .menu-wrapper button:after {
 	content: '';
 	position: absolute;
-	width: 70%;
-	height: 3px;
+	width: 60%;
+	height: 2px;
 	background: #fff;
-	top: 5px;
-	left: 15%;
+	top: 6px;
+	left: 20%;
 	box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
 }
 
@@ -97,7 +97,7 @@
 
 .menu-wrapper li.dl-back:after {
 	left: 10px;
-	color: lighten($link-color, 15%);
+	color: lighten($orange, 15%);
 	-webkit-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
 	transform: rotate(180deg);
@@ -955,11 +955,11 @@ All this is done for any sub-level being entered.
 
 /* Demo 1 */
 .menu-wrapper button {
-	background: $link-color;
+	background: $orange;
 }
 
 .menu-wrapper button:hover,
 .menu-wrapper button.dl-active,
 .menu-wrapper ul {
-	background: darken($link-color, 5%);
+	background: $orange;
 }

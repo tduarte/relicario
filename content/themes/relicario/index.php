@@ -8,10 +8,9 @@
 
 				<div class="gridly-image">
 					<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'summary-image' );  ?></a>
-				</div>
-
-				<div class="gridly-category">
-					<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
+					<div class="gridly-category">
+						<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+					</div>
 				</div>
 
 			</div>

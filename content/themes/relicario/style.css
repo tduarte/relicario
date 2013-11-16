@@ -1050,7 +1050,7 @@ footer {
     border-radius: 4px;
     -webkit-filter: saturate(100%); }
     .gridly-image img:hover {
-      -webkit-filter: saturate(150%); }
+      -webkit-filter: saturate(200%); }
 
 .gridly-category {
   font-weight: 700;

@@ -855,9 +855,6 @@ body {
   line-height: 30px;
   font: 16px Lato, sans-serif; }
 
-img {
-  transition: all 300ms ease-in-out; }
-
 #wrap {
   max-width: 90%;
   /* 960 px */
@@ -994,21 +991,23 @@ footer {
     display: inline;
     float: left;
     font-size: 12px;
-    color: #454545;
+    color: white;
     line-height: 18px;
     font-family: 'Helvetica',Arial, Helvetica, sans-serif; }
     #footer-area .widget h3 {
-      color: #858585; }
+      color: white; }
     #footer-area .widget p {
-      color: #000; }
+      color: white; }
     #footer-area .widget ul {
       margin-left: 0px; }
     #footer-area .widget li {
-      color: #858585; }
+      color: white; }
     #footer-area .widget a {
-      color: #444444; }
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0; }
       #footer-area .widget a:hover {
-        color: #000; }
+        color: white;
+        border-bottom: 1px dotted white; }
   #footer-area .widget-copy {
     width: 280px;
     overflow: hidden;
@@ -1025,14 +1024,14 @@ footer {
   margin-top: 20px; }
   #copyright p {
     line-height: 70px;
-    color: #4f5356;
+    color: white;
     font-size: 12px; }
   #copyright a {
-    color: #858585;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none; }
     #copyright a:hover {
-      color: #000000;
-      text-decoration: underline; }
+      color: white;
+      border-bottom: 1px dotted white; }
 
 .type-page, .type-attachment {
   width: 770px;
@@ -1044,15 +1043,18 @@ footer {
   display: inline;
   float: left; }
 
-.gridly-image {
+div.grid {
+  background: black;
+  overflow: hidden;
   z-index: 5; }
-  .gridly-image img {
+  div.grid img {
     border-radius: 4px;
-    -webkit-filter: saturate(100%); }
-    .gridly-image img:hover {
-      -webkit-filter: saturate(200%); }
+    -webkit-filter: blur(2px);
+    transition: all 500ms ease-in-out; }
+    div.grid img:hover {
+      -webkit-filter: blur(0px); }
 
-.gridly-category {
+a.grid {
   font-weight: 700;
   margin: 1em;
   font-size: 1.5em;
@@ -1062,9 +1064,8 @@ footer {
   top: 0;
   left: 0;
   width: 87%;
-  overflow: hidden; }
-  .gridly-category a {
-    color: white; }
+  overflow: hidden;
+  color: white; }
 
 .size-full {
   width: 100%;

@@ -6,11 +6,9 @@
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<div class="gridly-image">
+				<div class="grid">
 					<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'summary-image' );  ?></a>
-					<div class="gridly-category">
-						<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-					</div>
+					<a href="<?php the_permalink() ?>" class="grid"><?php the_title(); ?></a>
 				</div>
 
 			</div>

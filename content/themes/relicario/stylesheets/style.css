@@ -449,21 +449,34 @@ All this is done for any sub-level being entered.
 .menu-wrapper ul {
   background: #ec661c; }
 
+html {
+  height: 100%; }
+
 body {
   color: #454545;
   background: #eee;
   line-height: 30px;
-  font: 16px Lato, sans-serif; }
+  font: 16px Lato, sans-serif;
+  height: 100%; }
 
 #wrap {
   max-width: 90%;
   /* 960 px */
   margin: 0 auto; }
 
+#wrap:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden; }
+
 #container {
   width: 103.125%;
   /* 990px */
   overflow: hidden;
+  margin-top: 20px;
   margin-bottom: -1.875em;
   /* 30px */ }
 
@@ -479,7 +492,7 @@ img {
   height: auto; }
 
 h1 {
-  font-size: 2.25em; }
+  font-size: 2.5em; }
 
 h2 {
   font-size: 1.25em; }
@@ -491,7 +504,7 @@ h5, h6 {
   font-size: 0.8125em; }
 
 p {
-  font-size: 0.8125em;
+  font-size: 1.2em;
   line-height: 1.85em;
   margin-bottom: 8px; }
 
@@ -526,7 +539,6 @@ a:focus {
 header {
   width: 100%;
   background: white;
-  margin-bottom: 20px;
   z-index: 1; }
 
 header:before,
@@ -632,16 +644,6 @@ footer {
     #copyright a:hover {
       color: white;
       border-bottom: 1px dotted white; }
-
-.type-page, .type-attachment {
-  width: 770px;
-  background: #FFF;
-  border-right: 1px solid #dbdbdb;
-  border-bottom: 1px solid #dbdbdb;
-  margin-right: 10px;
-  margin-top: 15px;
-  display: inline;
-  float: left; }
 
 div.grid {
   background: black;
@@ -757,19 +759,22 @@ blockquote {
   margin-bottom: 15px; }
 
 /* Single Post */
-.single-post .type-post {
-  width: 80%;
+.single-post .type-post, .type-page {
+  width: 100%;
   font-weight: 300;
-  position: relative;
+  margin: .5%;
+  margin-top: 3em;
   line-height: 130%; }
-  .single-post .type-post img {
-    position: absolute;
-    top: 0; }
-  .single-post .type-post div {
-    margin-top: 250px;
-    padding: 20px;
-    background: #f0f0f0;
-    position: relative; }
+
+div.featured-image {
+  position: relative;
+  width: 100%;
+  min-height: 40%;
+  height: 40%;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
 
 /*=====================================
 =            Media Queries            =

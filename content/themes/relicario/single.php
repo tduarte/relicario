@@ -1,22 +1,17 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<?php if ( has_post_thumbnail() ) { ?>			
-				<?php the_post_thumbnail( 'full-image' );  ?>
-			<?php } ?>
-					<div class="gridly-copy">
-						<h1><?php the_title(); ?></h1>
-						
-						<p class="gridly-date"> <?php the_time(get_option('date_format')); ?></p>
-						
-						<?php the_content(); ?> 
-						
-						<p><?php the_tags(); ?></p>
-						
-						<div class="clear"></div>
+		<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full-image', false, '' ); ?>
+		<div class="featured-image" style="background-image: url(<?php echo $thumb[0]; ?>)" data-speed="2">
+		</div>
+		<div id="wrap">
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<h1><?php the_title(); ?></h1>
+				
+				<!-- <p class="gridly-date"> <?php the_time(get_option('date_format')); ?></p> -->
+				
+				<?php the_content(); ?> 
 
-						<?php comments_template(); ?> 
-					</div>			
+				<?php comments_template(); ?> 			
 			 </div>
 		<?php endwhile; endif; ?>
 <?php get_footer(); ?>

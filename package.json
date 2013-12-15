@@ -1,6 +1,9 @@
 {
   "name": "relicario-wordpress",
   "version": "0.1.0",
+  "author": "Thiago Duarte <eu@thiagoduarte.com.br>",
+  "description": "Website of Relicario 2014.",
+  "license" : "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tduarte/relicario"

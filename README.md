@@ -21,7 +21,8 @@ Pensando nos objetivos do evento, durante o desenvolvimento do site para a CORDe
 * Maneira facilitada de adicionar patrocinadores e apoios.
 
 ## Sistema ##
-* Wordpress 3.6.1
+* Wordpress 3.8
+* Grunt 0.4.2
 * Tema Gridly 0.1
 * Jquery 1.10.2
 * Estilos em SASS (SCSS)

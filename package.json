@@ -1,0 +1,19 @@
+{
+  "name": "relicario-wordpress",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tduarte/relicario"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-imagemin": "~0.4.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-autoprefixer": "~0.4.2",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-cssmin": "~0.7.0"
+  }
+}

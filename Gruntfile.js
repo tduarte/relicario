@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 		cssmin: {
 			add_banner: {
 				options: {
-					banner: '/* Theme Name: Relicario Theme - Theme URI: http://www.relicar.io - Description: Relicario - R Design by Thiago Duarte, based on Gridly theme. - Author: Thiago Duarte - Author URI: http://www.thiago.in/ - Version: 0.1 - License: The MIT License (MIT) - License URI: http://opensource.org/licenses/MIT */'
+					banner: '/*\nTheme Name: Relicario Theme\nTheme URI: http://www.relicar.io\nDescription: Relicario - R Design by Thiago Duarte, based on Gridly theme.\nAuthor: Thiago Duarte\nAuthor URI: http://www.thiago.in/\nVersion: 0.1.0\nLicense: The MIT License (MIT)\nLicense URI: http://opensource.org/licenses/MIT\n*/'
 				},
 				files: {
 				'content/themes/relicario/style.css': ['content/themes/relicario/style.css']

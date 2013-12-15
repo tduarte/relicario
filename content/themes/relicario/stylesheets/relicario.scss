@@ -107,11 +107,11 @@ header {
 
 header:before,
 header:after {
-    content:"";
-    display:table;
+		content:"";
+		display:table;
 }
 header:after {
-    clear:both;
+		clear:both;
 }
 
 #logo {
@@ -375,6 +375,25 @@ blockquote {
 	padding-left: 25px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+/* Single Post */
+
+.single-post .type-post {
+	width: 80%;
+	font-weight: 300;
+	position: relative;
+	line-height: 130%;
+	img {
+		position: absolute;
+		top: 0;
+	}
+	div {
+		margin-top: 250px;
+		padding: 20px;
+		background: #f0f0f0;
+		position: relative;
+	}
 }
 
 /*=====================================

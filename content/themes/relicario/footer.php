@@ -1,5 +1,5 @@
 		</div><!-- // wrap -->
-		<footer>
+	<!-- 	<footer>
 			<div id="wrap">
 				<?php if ( is_active_sidebar( 'gridly_footer')) { ?>     
 				<div id="footer-area">
@@ -13,7 +13,7 @@
 				</div>
 			</div>
 		</footer>
-		<?php wp_footer(); ?>
+	 -->	<?php wp_footer(); ?>
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</body>
 </html>

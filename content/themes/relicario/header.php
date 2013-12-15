@@ -25,9 +25,7 @@
 		<div id="wrap">
 			<div id="logo">
 				<a href="<?php echo home_url( '/' ); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<object data="<?php echo get_template_directory_uri(); ?>/images/logo.svg" type="image/svg+xml">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('sitename'); ?>" />
-					</object>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Monkey face">
 				</a>			
 			</div>
 			<nav id="menu-container" class="menu-wrapper">

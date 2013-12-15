@@ -12,10 +12,10 @@
 /* Common styles of menus */
 
 .menu-wrapper {
-	width: 100%;
-	max-width: 250px;
-	margin-top: 36px;
-	position: relative;
+	width: 250px;
+	margin-top: 2.5em;
+	position: absolute;
+	right: 5%;
 	perspective: 1000px;
 	perspective-origin: 50% 200%;
 }

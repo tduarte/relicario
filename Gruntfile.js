@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 				livereload: true,
 			},
 			scripts: {
-				files: ['content/themes/relicario/js/*.js'],
+				files: ['content/themes/relicario/js/theme/*.js'],
 				tasks: ['concat', 'uglify'],
 				options: {
 					spawn: false,

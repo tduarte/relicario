@@ -1,7 +1,7 @@
 // Masonry
 $('#container').masonry({
-  columnWidth: '.type-post',
-  itemSelector: '.type-post',
+  columnWidth: '.box',
+  itemSelector: '.box',
   isAnimated: true
 });
 

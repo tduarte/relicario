@@ -56,7 +56,7 @@
     display: block;
 }
 
-.sidr ul li a:hover {
+.sidr ul li a:hover, .current-menu-item {
 	background: lighten($orange, 5%)
 }
 

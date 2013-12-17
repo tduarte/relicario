@@ -106,7 +106,7 @@ img {
 .sidr ul li {
   display: block; }
 
-.sidr ul li a:hover {
+.sidr ul li a:hover, .current-menu-item {
   background: #ee7634; }
 
 .sidr ul li a {

@@ -42,10 +42,12 @@
 			
 			<nav id="sidr">
 			<?php wp_nav_menu(); ?>
-			<!-- <ul>
-				<li></li>
-				<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt=""></a></li>
-			</ul> -->
+			<div class="social-bar">
+				<a href="#"><i class="icon-facebook2"></i></a>
+				<a href="#"><i class="icon-flickr2"></i></a>
+				<a href="#"><i class="icon-vimeo2"></i></a>
+				<a href="#"><i class="icon-instagram"></i></a>
+			</div>
 			</nav>
 
 			<!-- <div id="social">

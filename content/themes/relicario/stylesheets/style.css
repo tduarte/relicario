@@ -66,7 +66,6 @@ img {
   line-height: 1;
   margin: 0;
   background: #ec661c; }
-
 #menu i {
   font-size: 1.5em;
   color: white; }
@@ -90,43 +89,29 @@ img {
   overflow-y: auto;
   background: #ec661c;
   box-shadow: inset 10px 0px 5px -5px #e15c13; }
-
-.sidr .sidr-inner {
-  padding: 0; }
+  .sidr .sidr-inner {
+    padding: 0; }
+  .sidr ul {
+    padding: 0;
+    margin: 0; }
+    .sidr ul li {
+      border-bottom: 1px solid #f0864b; }
+      .sidr ul li a {
+        padding: 1em;
+        display: block;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; }
+        .sidr ul li a i {
+          margin-right: 5px; }
 
 .sidr.right {
   left: auto;
   right: -260px; }
 
-.sidr ul {
-  padding: 0;
-  margin: 0;
-  z-index: 9999; }
-
-.sidr ul li {
-  border-bottom: 1px solid #f0864b; }
-
-.sidr ul li a {
-  color: rgba(255, 255, 255, 0.9);
-  transition: background-color, color ease-in-out 0.3s; }
-
-.sidr ul li a i {
-  margin-right: 5px; }
-
 .sidr ul li a:hover, .current-menu-item, .current-menu-item a {
   color: white !important;
   background-color: #ee7634; }
-
-.sidr ul li a {
-  padding: 1em;
-  display: block;
-  text-decoration: none; }
-
-.sidr ul li ul {
-  margin: 0; }
-
-.sidr ul li ul li a {
-  color: white; }
 
 @font-face {
   font-family: 'relicario';
@@ -1126,12 +1111,12 @@ hr {
 
 /* link styles */
 a:link, a:visited, a:active, a:hover {
-  color: #8db12c;
+  color: #ec661c;
   text-decoration: none;
   transition: color ease 0.3s; }
 
 a:hover {
-  color: #6a9100; }
+  color: #ad470e; }
 
 a:focus {
   outline-style: none; }
@@ -1332,6 +1317,14 @@ blockquote {
   padding-left: 25px;
   margin-top: 15px;
   margin-bottom: 15px; }
+
+.social-bar {
+  margin: 20px 60px; }
+  .social-bar a {
+    color: #c55110;
+    font-size: 2em; }
+    .social-bar a:hover {
+      color: white; }
 
 /*=====================================
 =            Media Queries            =

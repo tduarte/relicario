@@ -113,13 +113,13 @@ hr {
 	
 /* link styles */	
 a:link, a:visited, a:active,a:hover {
-	color: desaturate($green, 40%);
+	color: $orange;
 	text-decoration: none;
 	transition: color ease 0.3s;
 }
 
 a:hover {
-	color: darken($green, 15%);
+	color: darken($orange, 15%);
 }
 
 a:focus {
@@ -321,7 +321,6 @@ div.featured-image {
 	margin-top: 6em;
 }
 
-
 .clear {
 	clear: both;
 }
@@ -366,6 +365,17 @@ blockquote {
 	padding-left: 25px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.social-bar {
+	margin: 20px 60px;	
+	a{
+		color: darken($orange, 10%);
+		font-size: 2em;
+		&:hover {
+			color: white;
+		}
+	}
 }
 
 /*=====================================

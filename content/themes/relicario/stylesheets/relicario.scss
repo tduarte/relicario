@@ -115,6 +115,7 @@ hr {
 a:link, a:visited, a:active,a:hover {
 	color: desaturate($green, 40%);
 	text-decoration: none;
+	transition: color ease 0.3s;
 }
 
 a:hover {
@@ -271,11 +272,7 @@ footer {
 		overflow: hidden;
 		background-color: rgba( $orange, .5 );
 		color: white;
-		/* Transition */
-		transition-property: opacity;
-		transition-duration: 0.3s;
-		transition-timing-function: ease-in-out;
-		transition-delay: 0;
+		transition: ease-in-out opacity 0.3s;
 		&:hover {
 			opacity: 1;
 		}

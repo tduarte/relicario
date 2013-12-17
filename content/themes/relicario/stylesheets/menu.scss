@@ -5,6 +5,7 @@
 	position: absolute;
 	right: 5%;
 	top: 2em;
+    line-height: 1;
 	margin: 0;
 	background: $orange;
 }
@@ -33,7 +34,6 @@
     overflow-x: none;
     overflow-y: auto;
     background: $orange;
-    color: rgba(255,255,255,.8);
     box-shadow: inset 10px 0px 5px -5px darken($orange, 4%);
 }
 
@@ -48,23 +48,32 @@
 
 .sidr ul {
 	padding: 0;
+    margin: 0;
 	z-index: 9999;
-    display: block;
 }
 
 .sidr ul li {
-    display: block;
+    border-bottom: 1px solid lighten($orange, 10%);
 }
 
-.sidr ul li a:hover, .current-menu-item {
-	background: lighten($orange, 5%)
+.sidr ul li a {
+    color: rgba(255,255,255,.9);
+    transition: background-color, color ease-in-out 0.3s;
+}
+
+.sidr ul li a i {
+    margin-right: 5px;
+}
+
+.sidr ul li a:hover, .current-menu-item, .current-menu-item a {
+    color: white!important;
+	background-color: lighten($orange, 5%);
 }
 
 .sidr ul li a {
 	padding: 1em;
     display: block;
     text-decoration: none;
-    color: white;
 }
 
 .sidr ul li ul {

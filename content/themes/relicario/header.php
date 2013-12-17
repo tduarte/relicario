@@ -37,11 +37,15 @@
 				</a>			
 			</div>
 			<div id="menu">
-				<a href="#sidr"><i class="icon-menu"></i></a>
+				<a href="#sidr"><i class="icon-list2"></i></a>
 			</div>
 			
 			<nav id="sidr">
 			<?php wp_nav_menu(); ?>
+			<!-- <ul>
+				<li></li>
+				<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt=""></a></li>
+			</ul> -->
 			</nav>
 
 			<!-- <div id="social">

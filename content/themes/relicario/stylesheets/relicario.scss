@@ -1,7 +1,7 @@
 /*
 	Theme Name: Relicario Theme
 	Theme URI: http://www.relicar.io
-	Description: Relicario - R Design by Thiago Duarte, based on Gridly theme.
+	Description: Relicario - R Design 2014 by Thiago Duarte.
 	Author: Thiago Duarte
 	Author URI: http://www.thiago.in/
 	Version: 0.1
@@ -14,6 +14,7 @@
 @import 'variables';
 @import 'reset';
 @import 'menu';
+@import 'icons';
 
 html {
 	height: 100%;
@@ -251,21 +252,33 @@ footer {
 }
 
 .box {
-	background: black;
-	overflow: hidden;
-	border-radius: 5px;
+	img {
+		border-radius: 5px;
+	}
 	h2 {
 		font-weight: 700;
-		margin: 1em;
+		padding: 1em;
+		margin: 0;
+		width: 100%;
+		height: 100%;
 		font-size: 1.5em;
 		line-height: 1.5em;
 		text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 		position: absolute;
 		top:0;
 		left: 0;
-		width: 87%;
+		opacity: 0;
 		overflow: hidden;
+		background-color: rgba( $orange, .5 );
 		color: white;
+		/* Transition */
+		transition-property: opacity;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-in-out;
+		transition-delay: 0;
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 
@@ -290,7 +303,7 @@ div.featured-image {
 	margin-top: 0;
 	padding: 10% 0;
 	color: white;
-	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	text-shadow: 0 2px 0 rgba(0,0,0,0.3);
 }
 
 .social {

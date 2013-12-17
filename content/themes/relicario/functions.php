@@ -22,8 +22,9 @@
 
 	function theme_styles()  
 	{ 
-	    wp_register_style( 'relicario', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
-	    wp_enqueue_style( 'relicario');
+	    wp_register_style('relicario', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
+
+	    wp_enqueue_style('relicario');
 	}
 	add_action('wp_enqueue_scripts', 'theme_styles');
 	

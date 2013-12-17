@@ -12,8 +12,8 @@
 @font-face {
   font-family: 'Inika';
   font-style: normal;
-  font-weight: 700;
-  src: local("Inika Bold"), local("Inika-Bold"), url(http://themes.googleusercontent.com/static/fonts/inika/v1/yVCO3macxFLQ-WV7uEKF1nYhjbSpvc47ee6xR_80Hnw.woff) format("woff"); }
+  font-weight: 400;
+  src: local("Inika"), url(http://themes.googleusercontent.com/static/fonts/inika/v1/SfUXB8ocE5dNKtU5DSQbGKCWcynf_cDxXwCLxiixG1c.woff) format("woff"); }
 
 @font-face {
   font-family: 'Lato';
@@ -235,6 +235,13 @@ img {
   max-width: 100%;
   height: auto; }
 
+h1, h2, h3, h4 {
+  font-family: Inika, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none; }
+
 h1 {
   font-size: 2.5em;
   line-height: 1.3em; }
@@ -326,7 +333,7 @@ header:after {
 
 footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  background: #ec661c;
+  background: #dc5a12;
   overflow: hidden;
   margin-top: 100px; }
 
@@ -371,7 +378,7 @@ footer {
 #copyright {
   clear: both;
   width: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: #ad470e;
   display: inline;
   float: left;
   margin-top: 20px; }

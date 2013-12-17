@@ -33,7 +33,7 @@
   font-weight: 400;
   src: local("Lato Italic"), local("Lato-Italic"), url(http://themes.googleusercontent.com/static/fonts/lato/v6/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format("woff"); }
 
-* {
+*, *:after, *::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -56,392 +56,70 @@ h1, h2, h3, h4, h5, h6, th, td, caption {
 img {
   border: 0; }
 
-/* Common styles of menus */
-.menu-wrapper {
-  width: 250px;
-  margin-top: 2.5em;
+#menu a {
+  line-height: 0;
+  margin: 2em 0;
+  padding: 0.5em;
   position: absolute;
   right: 5%;
-  perspective: 1000px;
-  perspective-origin: 50% 200%; }
+  top: 2em;
+  margin: 0;
+  background: #ec661c; }
 
-.menu-wrapper:first-child {
-  margin-right: 100px; }
-
-.menu-wrapper button {
-  float: right;
-  border: none;
-  width: 30px;
-  height: 28px;
-  text-indent: -900em;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  border-radius: 3px; }
-
-.menu-wrapper button:after {
-  content: '';
-  position: absolute;
-  width: 60%;
-  height: 2px;
-  background: #fff;
-  top: 6px;
-  left: 20%;
-  box-shadow: 0 7px 0 #fff, 0 14px 0 #fff; }
-
-.menu-wrapper ul {
-  padding: 0;
-  list-style: none;
-  transform-style: preserve-3d; }
-
-.menu-wrapper li {
-  position: relative; }
-
-.menu-wrapper li a {
-  display: block;
-  position: relative;
-  padding: 15px 20px;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 300;
-  color: #fff;
-  outline: none; }
-
-.no-touch .menu-wrapper li a:hover {
-  background: rgba(255, 248, 213, 0.1); }
-
-.menu-wrapper li.dl-back > a {
-  padding-left: 30px;
-  background: #e55e13; }
-
-.menu-wrapper li.dl-back:after,
-.menu-wrapper li > a:not(:only-child):after {
-  position: absolute;
-  top: 0;
-  line-height: 50px;
-  font-family: 'relicario';
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  content: "\e60c"; }
-
-.menu-wrapper li.dl-back:after {
-  left: 10px;
-  color: #f29663;
-  transform: rotate(180deg); }
-
-.menu-wrapper li > a:after {
-  right: 10px;
+#menu i {
+  font-size: 1.5em;
   color: white; }
 
-.menu-wrapper .menu {
-  margin: 40px 0 0 0;
+.sidr-open #menu {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  opacity: 0;
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transform: translateY(10px);
-  backface-visibility: hidden; }
+  height: 100%; }
 
-.menu-wrapper .menu.dl-menu-toggle {
-  transition: all 0.3s ease; }
+.sidr {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 260px;
+  overflow-x: none;
+  overflow-y: auto;
+  background: #ec661c;
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 10px 0px 5px -5px #e15c13; }
 
-.menu-wrapper .menu.dl-menuopen {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0px); }
+.sidr .sidr-inner {
+  padding: 0; }
 
-/* Hide the inner submenus */
-.menu-wrapper li .sub-menu {
-  display: none; }
+.sidr.right {
+  left: auto;
+  right: -260px; }
 
-/* 
-When a submenu is openend, we will hide all li siblings.
-For that we give a class to the parent menu called "dl-subview".
-We also hide the submenu link. 
-The opened submenu will get the class "dl-subviewopen".
-All this is done for any sub-level being entered.
-*/
-.menu.dl-subview li,
-.menu.dl-subview li.dl-subviewopen > a,
-.menu.dl-subview li.dl-subview > a {
-  display: none; }
-
-.menu.dl-subview li.dl-subview,
-.menu.dl-subview li.dl-subview .sub-menu,
-.menu.dl-subview li.dl-subviewopen,
-.menu.dl-subview li.dl-subviewopen > .sub-menu,
-.menu.dl-subview li.dl-subviewopen > .sub-menu > li {
+.sidr ul {
+  padding: 0;
+  z-index: 9999;
   display: block; }
 
-/* Dynamically added submenu outside of the menu context */
-.menu-wrapper > .sub-menu {
-  position: absolute;
-  width: 100%;
-  top: 50px;
-  left: 0;
+.sidr ul li {
+  display: block; }
+
+.sidr ul li a:hover {
+  background: #ee7634; }
+
+.sidr ul li a {
+  padding: 1em;
+  display: block;
+  text-decoration: none;
+  color: white; }
+
+.sidr ul li ul {
   margin: 0; }
 
-/* Animation classes for moving out and in */
-.menu.dl-animate-out-1 {
-  animation: MenuAnimOut1 0.4s; }
-
-.menu.dl-animate-out-2 {
-  animation: MenuAnimOut2 0.3s ease-in-out; }
-
-.menu.dl-animate-out-3 {
-  animation: MenuAnimOut3 0.4s ease; }
-
-.menu.dl-animate-out-4 {
-  animation: MenuAnimOut4 0.4s ease; }
-
-.menu.dl-animate-out-5 {
-  animation: MenuAnimOut5 0.4s ease; }
-
-@keyframes MenuAnimOut1 {
-  50% {
-    transform: translateZ(-250px) rotateY(30deg); }
-
-  75% {
-    transform: translateZ(-372.5px) rotateY(15deg);
-    opacity: .5; }
-
-  100% {
-    transform: translateZ(-500px) rotateY(0deg);
-    opacity: 0; } }
-
-@keyframes MenuAnimOut2 {
-  100% {
-    transform: translateX(-100%);
-    opacity: 0; } }
-
-@keyframes MenuAnimOut3 {
-  100% {
-    transform: translateZ(300px);
-    opacity: 0; } }
-
-@keyframes MenuAnimOut4 {
-  100% {
-    transform: translateZ(-300px);
-    opacity: 0; } }
-
-@keyframes MenuAnimOut5 {
-  100% {
-    transform: translateY(40%);
-    opacity: 0; } }
-
-.menu.dl-animate-in-1 {
-  animation: MenuAnimIn1 0.3s; }
-
-.menu.dl-animate-in-2 {
-  animation: MenuAnimIn2 0.3s ease-in-out; }
-
-.menu.dl-animate-in-3 {
-  animation: MenuAnimIn3 0.4s ease; }
-
-.menu.dl-animate-in-4 {
-  animation: MenuAnimIn4 0.4s ease; }
-
-.menu.dl-animate-in-5 {
-  animation: MenuAnimIn5 0.4s ease; }
-
-@keyframes MenuAnimIn1 {
-  0% {
-    transform: translateZ(-500px) rotateY(0deg);
-    opacity: 0; }
-
-  20% {
-    transform: translateZ(-250px) rotateY(30deg);
-    opacity: 0.5; }
-
-  100% {
-    transform: translateZ(0px) rotateY(0deg);
-    opacity: 1; } }
-
-@keyframes MenuAnimIn2 {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0; }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1; } }
-
-@keyframes MenuAnimIn3 {
-  0% {
-    transform: translateZ(300px);
-    opacity: 0; }
-
-  100% {
-    transform: translateZ(0px);
-    opacity: 1; } }
-
-@keyframes MenuAnimIn4 {
-  0% {
-    transform: translateZ(-300px);
-    opacity: 0; }
-
-  100% {
-    transform: translateZ(0px);
-    opacity: 1; } }
-
-@keyframes MenuAnimIn5 {
-  0% {
-    transform: translateY(40%);
-    opacity: 0; }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1; } }
-
-.menu-wrapper > .sub-menu.dl-animate-in-1 {
-  animation: SubMenuAnimIn1 0.4s ease; }
-
-.menu-wrapper > .sub-menu.dl-animate-in-2 {
-  animation: SubMenuAnimIn2 0.3s ease-in-out; }
-
-.menu-wrapper > .sub-menu.dl-animate-in-3 {
-  animation: SubMenuAnimIn3 0.4s ease; }
-
-.menu-wrapper > .sub-menu.dl-animate-in-4 {
-  animation: SubMenuAnimIn4 0.4s ease; }
-
-.menu-wrapper > .sub-menu.dl-animate-in-5 {
-  animation: SubMenuAnimIn5 0.4s ease; }
-
-@keyframes SubMenuAnimIn1 {
-  0% {
-    transform: translateX(50%);
-    opacity: 0; }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1; } }
-
-@keyframes SubMenuAnimIn2 {
-  0% {
-    transform: translateX(100%);
-    opacity: 0; }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1; } }
-
-@keyframes SubMenuAnimIn3 {
-  0% {
-    transform: translateZ(-300px);
-    opacity: 0; }
-
-  100% {
-    transform: translateZ(0px);
-    opacity: 1; } }
-
-@keyframes SubMenuAnimIn4 {
-  0% {
-    transform: translateZ(300px);
-    opacity: 0; }
-
-  100% {
-    transform: translateZ(0px);
-    opacity: 1; } }
-
-@keyframes SubMenuAnimIn5 {
-  0% {
-    transform: translateZ(-200px);
-    opacity: 0; }
-
-  100% {
-    transform: translateZ(0);
-    opacity: 1; } }
-
-.menu-wrapper > .sub-menu.dl-animate-out-1 {
-  animation: SubMenuAnimOut1 0.4s ease; }
-
-.menu-wrapper > .sub-menu.dl-animate-out-2 {
-  animation: SubMenuAnimOut2 0.3s ease-in-out; }
-
-.menu-wrapper > .sub-menu.dl-animate-out-3 {
-  animation: SubMenuAnimOut3 0.4s ease; }
-
-.menu-wrapper > .sub-menu.dl-animate-out-4 {
-  animation: SubMenuAnimOut4 0.4s ease; }
-
-.menu-wrapper > .sub-menu.dl-animate-out-5 {
-  animation: SubMenuAnimOut5 0.4s ease; }
-
-@keyframes SubMenuAnimOut1 {
-  0% {
-    transform: translateX(0%);
-    opacity: 1; }
-
-  100% {
-    transform: translateX(50%);
-    opacity: 0; } }
-
-@keyframes SubMenuAnimOut2 {
-  0% {
-    transform: translateX(0%);
-    opacity: 1; }
-
-  100% {
-    transform: translateX(100%);
-    opacity: 0; } }
-
-@keyframes SubMenuAnimOut3 {
-  0% {
-    transform: translateZ(0px);
-    opacity: 1; }
-
-  100% {
-    transform: translateZ(-300px);
-    opacity: 0; } }
-
-@keyframes SubMenuAnimOut4 {
-  0% {
-    transform: translateZ(0px);
-    opacity: 1; }
-
-  100% {
-    transform: translateZ(300px);
-    opacity: 0; } }
-
-@keyframes SubMenuAnimOut5 {
-  0% {
-    transform: translateZ(0);
-    opacity: 1; }
-
-  100% {
-    transform: translateZ(-200px);
-    opacity: 0; } }
-
-/* No JS Fallback */
-.no-js .menu-wrapper .menu {
-  position: relative;
-  opacity: 1;
-  transform: none; }
-
-.no-js .menu-wrapper li .sub-menu {
-  display: block; }
-
-.no-js .menu-wrapper li.dl-back {
-  display: none; }
-
-.no-js .menu-wrapper li > a:not(:only-child) {
-  background: rgba(0, 0, 0, 0.1); }
-
-.no-js .menu-wrapper li > a:not(:only-child):after {
-  content: ''; }
-
-/* Colors for demos */
-/* Demo 1 */
-.menu-wrapper button {
-  background: #ec661c; }
-
-.menu-wrapper button:hover,
-.menu-wrapper button.dl-active,
-.menu-wrapper ul {
-  background: #ec661c; }
+.sidr ul li ul li a {
+  color: white; }
 
 @font-face {
   font-family: 'relicario';
@@ -453,7 +131,6 @@ All this is done for any sub-level being entered.
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'relicario';
   speak: none;
-  font-size: 10em;
   color: #ec661c;
   font-style: normal;
   font-weight: normal;
@@ -465,34 +142,44 @@ All this is done for any sub-level being entered.
   -moz-osx-font-smoothing: grayscale; }
 
 .icon-monitor:before {
-  content: "\e602"; }
+  content: "\e602";
+  font-size: 10em; }
 
 .icon-video:before {
-  content: "\e603"; }
+  content: "\e603";
+  font-size: 10em; }
 
 .icon-delegacao:before {
-  content: "\e604"; }
+  content: "\e604";
+  font-size: 10em; }
 
 .icon-sepa:before {
-  content: "\e605"; }
+  content: "\e605";
+  font-size: 10em; }
 
 .icon-oficina:before {
-  content: "\e606"; }
+  content: "\e606";
+  font-size: 10em; }
 
 .icon-desfile:before {
-  content: "\e607"; }
+  content: "\e607";
+  font-size: 10em; }
 
 .icon-noturno:before {
-  content: "\e608"; }
+  content: "\e608";
+  font-size: 10em; }
 
 .icon-bazar:before {
-  content: "\e609"; }
+  content: "\e609";
+  font-size: 10em; }
 
 .icon-delegacao-alt:before {
-  content: "\e60a"; }
+  content: "\e60a";
+  font-size: 10em; }
 
 .icon-registro:before {
-  content: "\e60b"; }
+  content: "\e60b";
+  font-size: 10em; }
 
 .icon-simbolo:before {
   content: "\e601"; }
@@ -501,17 +188,20 @@ All this is done for any sub-level being entered.
   content: "\e600"; }
 
 .icon-arrow-right:before {
-  content: "\e60c"; }
+  content: "\e60c";
+  font-size: 1em; }
 
-html {
+.icon-menu:before {
+  content: "\e60d"; }
+
+html, body, .container, .scroller {
   height: 100%; }
 
 body {
   color: #454545;
   background: #eee;
   line-height: 30px;
-  font: 16px Lato, sans-serif;
-  height: 100%; }
+  font: 16px Lato, sans-serif; }
 
 #wrap {
   max-width: 90%;
@@ -619,12 +309,6 @@ header:after {
     pointer-events: none;
     position: relative;
     max-width: 100%; }
-
-nav {
-  border-bottom: none;
-  z-index: 2;
-  float: right;
-  border-radius: 5px 5px 0 0; }
 
 #social {
   float: right;
@@ -838,12 +522,8 @@ blockquote {
     width: 100%;
     margin: 0 0 0.6em; }
 
-  .menu-wrapper {
-    width: 90%;
-    margin-top: 1.8em; }
-
-  .menu-wrapper .menu {
-    margin-top: 55px; }
+  #menu a {
+    top: 1.5em; }
 
   #comment-form {
     width: 100%; } }

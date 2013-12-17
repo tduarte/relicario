@@ -1,475 +1,76 @@
-/* Common styles of menus */
-
-.menu-wrapper {
-	width: 250px;
-	margin-top: 2.5em;
+#menu a {
+	line-height: 0;
+	margin: 2em 0;
+	padding: 0.5em;
 	position: absolute;
 	right: 5%;
-	perspective: 1000px;
-	perspective-origin: 50% 200%;
+	top: 2em;
+	margin: 0;
+	background: $orange;
 }
 
-.menu-wrapper:first-child {
-	margin-right: 100px;
-}
-
-.menu-wrapper button {
-	float: right;
-	border: none;
-	width: 30px;
-	height: 28px;
-	text-indent: -900em;
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-	outline: none;
-	border-radius: 3px;
-}
-
-.menu-wrapper button:after {
-	content: '';
-	position: absolute;
-	width: 60%;
-	height: 2px;
-	background: #fff;
-	top: 6px;
-	left: 20%;
-	box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
-}
-
-.menu-wrapper ul {
-	padding: 0;
-	list-style: none;
-	transform-style: preserve-3d;
-}
-
-.menu-wrapper li {
-	position: relative;
-}
-
-.menu-wrapper li a {
-	display: block;
-	position: relative;
-	padding: 15px 20px;
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: 300;
-	color: #fff;
-	outline: none;
-}
-
-.no-touch .menu-wrapper li a:hover {
-	background: rgba(255,248,213,0.1);
-}
-
-.menu-wrapper li.dl-back > a {
-	padding-left: 30px;
-	background: darken( $orange, 3% );
-}
-
-.menu-wrapper li.dl-back:after,
-.menu-wrapper li > a:not(:only-child):after {
-	position: absolute;
-	top: 0;
-	line-height: 50px;
-	font-family: 'relicario';
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-	content: "\e60c";
-}
-
-.menu-wrapper li.dl-back:after {
-	left: 10px;
-	color: lighten($orange, 15%);
-	transform: rotate(180deg);
-}
-
-.menu-wrapper li > a:after {
-	right: 10px;
+#menu i {
+	font-size: 1.5em;
 	color: white;
 }
 
-.menu-wrapper .menu {
-	margin: 40px 0 0 0;
+.sidr-open #menu {
 	position: absolute;
-	width: 100%;
-	opacity: 0;
-	pointer-events: none;
-	border: 1px solid rgba(255,255,255,.3);
-	transform: translateY(10px);
-	backface-visibility: hidden;
-}
-
-.menu-wrapper .menu.dl-menu-toggle {
-	transition: all 0.3s ease;
-}
-
-.menu-wrapper .menu.dl-menuopen {
-	opacity: 1;
-	pointer-events: auto;
-	transform: translateY(0px);
-}
-
-/* Hide the inner submenus */
-.menu-wrapper li .sub-menu {
-	display: none;
-}
-
-/* 
-When a submenu is openend, we will hide all li siblings.
-For that we give a class to the parent menu called "dl-subview".
-We also hide the submenu link. 
-The opened submenu will get the class "dl-subviewopen".
-All this is done for any sub-level being entered.
-*/
-.menu.dl-subview li,
-.menu.dl-subview li.dl-subviewopen > a,
-.menu.dl-subview li.dl-subview > a {
-	display: none;
-}
-
-.menu.dl-subview li.dl-subview,
-.menu.dl-subview li.dl-subview .sub-menu,
-.menu.dl-subview li.dl-subviewopen,
-.menu.dl-subview li.dl-subviewopen > .sub-menu,
-.menu.dl-subview li.dl-subviewopen > .sub-menu > li {
-	display: block;
-}
-
-/* Dynamically added submenu outside of the menu context */
-.menu-wrapper > .sub-menu {
-	position: absolute;
-	width: 100%;
-	top: 50px;
+	top: 0;
 	left: 0;
-	margin: 0;
+	width: 100%;
+	height: 100%;
 }
 
-/* Animation classes for moving out and in */
-
-.menu.dl-animate-out-1 {
-	animation: MenuAnimOut1 0.4s;
+.sidr {
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 999999;
+    width: 260px;
+    overflow-x: none;
+    overflow-y: auto;
+    background: $orange;
+    color: rgba(255,255,255,.8);
+    box-shadow: inset 10px 0px 5px -5px darken($orange, 4%);
 }
 
-.menu.dl-animate-out-2 {
-	animation: MenuAnimOut2 0.3s ease-in-out;
+.sidr .sidr-inner {
+    padding: 0;
 }
 
-.menu.dl-animate-out-3 {
-	animation: MenuAnimOut3 0.4s ease;
+.sidr.right {
+    left: auto;
+    right: -260px;
 }
 
-.menu.dl-animate-out-4 {
-	animation: MenuAnimOut4 0.4s ease;
+.sidr ul {
+	padding: 0;
+	z-index: 9999;
+    display: block;
 }
 
-.menu.dl-animate-out-5 {
-	animation: MenuAnimOut5 0.4s ease;
+.sidr ul li {
+    display: block;
 }
 
-@keyframes MenuAnimOut1 {
-	50% {
-		transform: translateZ(-250px) rotateY(30deg);
-	}
-	75% {
-		transform: translateZ(-372.5px) rotateY(15deg);
-		opacity: .5;
-	}
-	100% {
-		transform: translateZ(-500px) rotateY(0deg);
-		opacity: 0;
-	}
+.sidr ul li a:hover {
+	background: lighten($orange, 5%)
 }
 
-@keyframes MenuAnimOut2 {
-	100% {
-		transform: translateX(-100%);
-		opacity: 0;
-	}
+.sidr ul li a {
+	padding: 1em;
+    display: block;
+    text-decoration: none;
+    color: white;
 }
 
-@keyframes MenuAnimOut3 {
-	100% {
-		transform: translateZ(300px);
-		opacity: 0;
-	}
+.sidr ul li ul {
+    margin: 0;
 }
 
-@keyframes MenuAnimOut4 {
-	100% {
-		transform: translateZ(-300px);
-		opacity: 0;
-	}
-}
-
-@keyframes MenuAnimOut5 {
-	100% {
-		transform: translateY(40%);
-		opacity: 0;
-	}
-}
-
-.menu.dl-animate-in-1 {
-	animation: MenuAnimIn1 0.3s;
-}
-
-.menu.dl-animate-in-2 {
-	animation: MenuAnimIn2 0.3s ease-in-out;
-}
-
-.menu.dl-animate-in-3 {
-	animation: MenuAnimIn3 0.4s ease;
-}
-
-.menu.dl-animate-in-4 {
-	animation: MenuAnimIn4 0.4s ease;
-}
-
-.menu.dl-animate-in-5 {
-	animation: MenuAnimIn5 0.4s ease;
-}
-
-@keyframes MenuAnimIn1 {
-	0% {
-		transform: translateZ(-500px) rotateY(0deg);
-		opacity: 0;
-	}
-	20% {
-		transform: translateZ(-250px) rotateY(30deg);
-		opacity: 0.5;
-	}
-	100% {
-		transform: translateZ(0px) rotateY(0deg);
-		opacity: 1;
-	}
-}
-
-@keyframes MenuAnimIn2 {
-	0% {
-		transform: translateX(-100%);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes MenuAnimIn3 {
-	0% {
-		transform: translateZ(300px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateZ(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes MenuAnimIn4 {
-	0% {
-		transform: translateZ(-300px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateZ(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes MenuAnimIn5 {
-	0% {
-		transform: translateY(40%);
-		opacity: 0;
-	}
-	100% {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
-
-.menu-wrapper > .sub-menu.dl-animate-in-1 {
-	animation: SubMenuAnimIn1 0.4s ease;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-in-2 {
-	animation: SubMenuAnimIn2 0.3s ease-in-out;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-in-3 {
-	animation: SubMenuAnimIn3 0.4s ease;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-in-4 {
-	animation: SubMenuAnimIn4 0.4s ease;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-in-5 {
-	animation: SubMenuAnimIn5 0.4s ease;
-}
-
-@keyframes SubMenuAnimIn1 {
-	0% {
-		transform: translateX(50%);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes SubMenuAnimIn2 {
-	0% {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes SubMenuAnimIn3 {
-	0% {
-		transform: translateZ(-300px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateZ(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes SubMenuAnimIn4 {
-	0% {
-		transform: translateZ(300px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateZ(0px);
-		opacity: 1;
-	}
-}
-
-@keyframes SubMenuAnimIn5 {
-	0% {
-		transform: translateZ(-200px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateZ(0);
-		opacity: 1;
-	}
-}
-
-.menu-wrapper > .sub-menu.dl-animate-out-1 {
-	animation: SubMenuAnimOut1 0.4s ease;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-out-2 {
-	animation: SubMenuAnimOut2 0.3s ease-in-out;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-out-3 {
-	animation: SubMenuAnimOut3 0.4s ease;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-out-4 {
-	animation: SubMenuAnimOut4 0.4s ease;
-}
-
-.menu-wrapper > .sub-menu.dl-animate-out-5 {
-	animation: SubMenuAnimOut5 0.4s ease;
-}
-
-@keyframes SubMenuAnimOut1 {
-	0% {
-		transform: translateX(0%);
-		opacity: 1;
-	}
-	100% {
-		transform: translateX(50%);
-		opacity: 0;
-	}
-}
-
-@keyframes SubMenuAnimOut2 {
-	0% {
-		transform: translateX(0%);
-		opacity: 1;
-	}
-	100% {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-}
-
-@keyframes SubMenuAnimOut3 {
-	0% {
-		transform: translateZ(0px);
-		opacity: 1;
-	}
-	100% {
-		transform: translateZ(-300px);
-		opacity: 0;
-	}
-}
-
-@keyframes SubMenuAnimOut4 {
-	0% {
-		transform: translateZ(0px);
-		opacity: 1;
-	}
-	100% {
-		transform: translateZ(300px);
-		opacity: 0;
-	}
-}
-
-@keyframes SubMenuAnimOut5 {
-	0% {
-		transform: translateZ(0);
-		opacity: 1;
-	}
-	100% {
-		transform: translateZ(-200px);
-		opacity: 0;
-	}
-}
-
-/* No JS Fallback */
-.no-js .menu-wrapper .menu {
-	position: relative;
-	opacity: 1;
-	transform: none;
-}
-
-.no-js .menu-wrapper li .sub-menu {
-	display: block;
-}
-
-.no-js .menu-wrapper li.dl-back {
-	display: none;
-}
-
-.no-js .menu-wrapper li > a:not(:only-child) {
-	background: rgba(0,0,0,0.1);
-}
-
-.no-js .menu-wrapper li > a:not(:only-child):after {
-	content: '';
-}
-
-/* Colors for demos */
-
-/* Demo 1 */
-.menu-wrapper button {
-	background: $orange;
-}
-
-.menu-wrapper button:hover,
-.menu-wrapper button.dl-active,
-.menu-wrapper ul {
-	background: $orange;
+.sidr ul li ul li a {
+    color: white;
 }

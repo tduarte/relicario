@@ -5,25 +5,12 @@ $('#container').masonry({
   isAnimated: true
 });
 
-// Menu
+// Side Menu
 
-$(function() {
-	$( '#menu-container' ).dlmenu();
-});
-
-// hover code for index  templates
 $(document).ready(function() {
-
-	$('#post-area .image').hover(
-		function() {
-			$(this).stop().fadeTo(300, 0.8);
-		},
-		function() {
-			$(this).fadeTo(300, 1.0);
-		}
-	);	
-		
-	
+	$('#menu').sidr({
+		side: 'right'
+	});
 });
 
 // Parallax 

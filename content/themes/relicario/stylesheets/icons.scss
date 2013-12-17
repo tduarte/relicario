@@ -12,7 +12,6 @@
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'relicario';
 	speak: none;
-	font-size: 10em;
 	color: $orange;
 	font-style: normal;
 	font-weight: normal;
@@ -27,33 +26,43 @@
 
 .icon-monitor:before {
 	content: "\e602";
+	font-size: 10em;
 }
 .icon-video:before {
 	content: "\e603";
+	font-size: 10em;
 }
 .icon-delegacao:before {
 	content: "\e604";
+	font-size: 10em;
 }
 .icon-sepa:before {
 	content: "\e605";
+	font-size: 10em;
 }
 .icon-oficina:before {
 	content: "\e606";
+	font-size: 10em;
 }
 .icon-desfile:before {
 	content: "\e607";
+	font-size: 10em;
 }
 .icon-noturno:before {
 	content: "\e608";
+	font-size: 10em;
 }
 .icon-bazar:before {
 	content: "\e609";
+	font-size: 10em;
 }
 .icon-delegacao-alt:before {
 	content: "\e60a";
+	font-size: 10em;
 }
 .icon-registro:before {
 	content: "\e60b";
+	font-size: 10em;
 }
 .icon-simbolo:before {
 	content: "\e601";
@@ -63,4 +72,8 @@
 }
 .icon-arrow-right:before {
 	content: "\e60c";
+	font-size: 1em;
+}
+.icon-menu:before {
+	content: "\e60d";
 }

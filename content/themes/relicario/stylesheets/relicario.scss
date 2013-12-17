@@ -16,7 +16,7 @@
 @import 'menu';
 @import 'icons';
 
-html {
+html, body, .container, .scroller {
 	height: 100%;
 }
 
@@ -25,7 +25,6 @@ body {
 	background: #eee;
 	line-height: $line-height;
 	font: $base-font-size $font-body;
-	height: 100%;
 }
 
 #wrap {
@@ -150,12 +149,6 @@ header:after {
 	}
 }
 
-nav {
-	border-bottom: none;
-	z-index: 2;
-	float:right;
-	border-radius: 5px 5px 0 0;
-}
 #social {
 	float: right;
 	overflow: hidden;
@@ -420,13 +413,8 @@ blockquote {
 		margin: 0 0 0.6em;
 	}
 
-	.menu-wrapper {
-		width: 90%;
-		margin-top: 1.8em;
-	}
-
-	.menu-wrapper .menu {
-		margin-top: 55px;
+	#menu a {
+		top: 1.5em;
 	}
 
 	#comment-form {

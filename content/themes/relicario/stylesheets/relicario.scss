@@ -113,13 +113,13 @@ hr {
 	
 /* link styles */	
 a:link, a:visited, a:active,a:hover {
-	color: $orange;
+	color: $main-color;
 	text-decoration: none;
 	transition: color ease 0.3s;
 }
 
 a:hover {
-	color: darken($orange, 15%);
+	color: darken($main-color, 15%);
 }
 
 a:focus {
@@ -178,7 +178,7 @@ header:after {
 
 footer {
 	border-top: 1px solid rgba(0,0,0,.1);
-	background: darken($orange, 5%);
+	background: darken($main-color, 5%);
 	overflow: hidden;
 	margin-top: 100px;
 }
@@ -233,7 +233,7 @@ footer {
 #copyright {
 	clear: both;
 	width: 100%;
-	background: darken($orange, 15%);
+	background: darken($main-color, 15%);
 	display: inline;
 	float: left;
 	margin-top: 20px;
@@ -270,7 +270,7 @@ footer {
 		left: 0;
 		opacity: 0;
 		overflow: hidden;
-		background-color: rgba( $orange, .5 );
+		background-color: rgba( $main-color, .5 );
 		color: white;
 		transition: ease-in-out opacity 0.3s;
 		&:hover {
@@ -289,7 +289,7 @@ footer {
 div.featured-image {
 	position: relative;
 	width: 100%;
-	background-color: $orange;
+	background-color: $main-color;
 	background-position: 50% 0;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -370,7 +370,7 @@ blockquote {
 .social-bar {
 	margin: 20px 60px;	
 	a{
-		color: darken($orange, 10%);
+		color: darken($main-color, 10%);
 		font-size: 2em;
 		&:hover {
 			color: white;

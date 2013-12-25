@@ -1,12 +1,4 @@
 $(document).ready(function(){
-
-	// Masonry
-	$('#container').masonry({
-		columnWidth: '.box',
-		itemSelector: '.box',
-		isAnimated: true
-	});
-
 	// Side Menu
 	$('#menu').sidr({
 		side: 'right'
@@ -20,5 +12,13 @@ $(document).ready(function(){
 			var bgpos = '50% '+ yPos + 'px';
 			$obj.css('background-position', bgpos );
 		}); 
+	});
+});
+
+$(window).load(function() {
+	$('#container').masonry({
+		columnWidth: '.box',
+		itemSelector: '.box',
+		isAnimated: true
 	});
 });

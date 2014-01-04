@@ -37,3 +37,7 @@ Pensando nos objetivos do evento, durante o desenvolvimento do site para a CORDe
 
 Criado e mantido por: [@tduarte](http://www.thiago.in/)  
 Desenvolvido com orgulho usando Wordpress + bbpress
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tduarte/relicario/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
